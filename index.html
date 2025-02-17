@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <link rel="icon" href="assets/logo-header.png">
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'accent-yellow': '#FFDC26',
+                    'secondary-color': '#FFF9F4',
+                    'yellow-bg': '#F9DF8A',
+                }
+            }
+        }
+        }
+    </script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-sora {
+            font-family: "Sora", serif;
+        }
+        .font-adlam{
+            font-family: "ADLaM Display", serif;
+        }
+    </style> 
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7bad1a6e87.js" crossorigin="anonymous"></script>
+
+
+    <!-- Animation on banner h1 -->
+    <style>
+        @keyframes fadebounce{
+            0%{opacity: 1; transform: translateY(-10px) rotate(45deg); color: #FFDC26;}
+            50%{opacity: 1; transform: translateY(5px); color: #000000;}
+            100%{opacity: 1; transform: translateY(0px); color: #FFDC26;}
+        }
+
+        @keyframes typing {
+            0%{width: 0;}
+            50%{width: 100%;}
+        }
+
+        @keyframes blink {
+            50%{border-right: 2px solid #FFDC26;}
+        }
+
+        .typing-text{                               
+            animation: typing 4s steps(50) infinite, blink 0.8s infinite;
+        }
+    </style>
+</head>
+
+
+<body class="font-sora">
+    <header class="mb-14 md:mb-24 lg:mb-40">
+        <!-- Navbar -->
+        <nav class="bg-secondary-color mb-8 md:mb-16">
+            <div class="navbar md:container md:mx-auto font-sora py-2 md:py-6 justify-between">
+                <div class="navbar-start">
+                    <div class="flex items-center gap-1">
+                        <img class="w-auto h-10" src="assets/logo-header.png" alt="logo">
+                        <a class="text-[26px] hidden md:block">Browse<span class="text-accent-yellow">4</span>Pets</a>
+                    </div>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a class="text-xl">Find a pet</a></li>
+                    <li><a class="text-xl">Breeds</a></li>
+                    <li><a class="text-xl">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end hidden md:flex md:gap-4">
+                  <i class="fa-regular fa-bell text-2xl"></i>
+                  <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+                  <a class="btn border border-accent-yellow text-xl font-normal bg-secondary-color">Login</a>
+                  <a class="btn bg-accent-yellow text-xl font-normal">Register</a>
+                </div>
+                <!-- Hamburger -->
+                <div class="lg:hidden dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li><a>Find a pet</a></li>
+                      <li><a>Breeds</a></li>
+                      <li><a>Contact us</a></li>
+                      <li><a class="md:hidden btn border border-accent-yellow font-normal mb-2">Login</a></li>
+                      <li><a class="md:hidden btn bg-accent-yellow font-normal">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="md:container md:mx-auto bg-[url(assets/cat-big.png)] bg-contain bg-bottom bg-no-repeat h-[360px] md:h-[532px] lg:h-[749px]">
+            <div class="lg:w-2/3 space-y-5 px-4 lg:pt-6">
+                <h1 class="font-adlam text-2xl md:text-3xl lg:text-5xl mt-6 typing-text" style="
+                    overflow: hidden;
+                    white-space: nowrap;"
+                >
+                    Pamper Your Pet,<br> Because They Deserve <br>the Best
+                </h1>
+                <p class="opacity-70 md:text-xl">
+                    Discover a world of treats, toys, and essentials handpicked for your furry friends. Shop now and make tails wag with joy! 
+                </p>
+                <div class="">
+                    <a class="btn bg-accent-yellow lg:text-xl font-normal">Find a pet</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="md:container md:mx-auto">
+        <!-- Categories Section -->
+        <section class="p-4 mb-14 md:mb-24 lg:mb-40">
+            <h2 class="text-xl md:text-3xl font-adlam mb-8 md:mb-11">Browse By Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 ">
+                <div class="rounded-xl bg-yellow-bg py-8 flex flex-col items-center gap-3">
+                    <div class=" w-24 h-24 bg-white rounded-full flex justify-center items-center">
+                        <img class="" src="assets/dog-cartoon.png" alt="dog-cartoon">
+                    </div>
+                    <h5 class="font-adlam md:text-xl">Dog</h5>
+                    <p class="">3 items</p>
+                </div>
+                <div class="rounded-xl bg-yellow-bg py-8 flex flex-col items-center gap-3">
+                    <div class=" w-24 h-24 bg-white rounded-full flex justify-center items-center">
+                        <img class="" src="assets/fish-cartoon.png" alt="fish-cartoon">
+                    </div>
+                    <h5 class="font-adlam md:text-xl">Fish</h5>
+                    <p class="">3 items</p>
+                </div>
+                <div class="rounded-xl bg-yellow-bg py-8 flex flex-col items-center gap-3">
+                    <div class=" w-24 h-24 bg-white rounded-full flex justify-center items-center">
+                        <img class="" src="assets/cat-cartoon.png" alt="cat-cartoon">
+                    </div>
+                    <h5 class="font-adlam md:text-xl">Cat</h5>
+                    <p class="">3 items</p>
+                </div>
+                <div class="rounded-xl bg-yellow-bg py-8 flex flex-col items-center gap-3">
+                    <div class=" w-24 h-24 bg-white rounded-full flex justify-center items-center">
+                        <img class="" src="assets/bird-cartoon.png" alt="bird-cartoon">
+                    </div>
+                    <h5 class="font-adlam md:text-xl">Birds</h5>
+                    <p class="">3 items</p>
+                </div>
+                <div class="rounded-xl bg-yellow-bg py-8 flex flex-col items-center gap-3">
+                    <div class=" w-24 h-24 bg-white rounded-full flex justify-center items-center">
+                        <img class="" src="assets/mouse-cartoon.png" alt="mouse-cartoon">
+                    </div>
+                    <h5 class="font-adlam md:text-xl">Small pet</h5>
+                    <p class="">3 items</p>
+                </div>
+                <div class="rounded-xl bg-yellow-bg py-8 flex flex-col items-center gap-3">
+                    <div class=" w-24 h-24 bg-white rounded-full flex justify-center items-center">
+                        <img class="" src="assets/rabbit-cartoon.png" alt="rabbit-cartoon">
+                    </div>
+                    <h5 class="font-adlam md:text-xl">Rabbit</h5>
+                    <p class="">3 items</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
